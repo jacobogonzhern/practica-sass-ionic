@@ -1,27 +1,44 @@
-#container {
-  text-align: center;
+// =============================================================
+// HOME.PAGE.SCSS
+// Estilos encapsulados del componente Home.
+// Angular los compila automáticamente al ejecutar `ionic serve`
+// (no hace falta `npm run watch:sass`).
+// =============================================================
+@use 'sass:color';
+@use '../../theme/abstracts/variables' as *;
+@use '../../theme/abstracts/mixins' as *;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+.home {
+  // 4. Título rojo, en mayúsculas y centrado
+  &__titulo {
+    color: $color-titulo;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: $espaciado-lg;
+  }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  // 5. Contenedor que empuja el botón a la derecha
+  &__acciones {
+    @include alinear-derecha;
+    margin-bottom: $espaciado-lg;
+  }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  // 5. Botón azul.
+  // ion-button usa Shadow DOM, así que no basta con background-color:
+  // hay que usar sus propiedades CSS personalizadas (--background...).
+  // En Sass, una variable dentro de una custom property necesita interpolación #{}.
+  &__boton {
+    --background: #{$color-boton};
+    --background-hover: #{color.adjust($color-boton, $lightness: -10%)};
+    --background-activated: #{color.adjust($color-boton, $lightness: -15%)};
+    --color: #{$color-texto-boton};
+  }
 
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  // 6. Imagen centrada con borde verde de 3px
+  &__imagen {
+    @include centrar-bloque;
+    width: 100%;
+    max-width: $ancho-max-imagen;
+    border: $grosor-borde-imagen solid $color-borde-imagen;
+  }
 }
