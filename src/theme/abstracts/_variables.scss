@@ -1,0 +1,18 @@
+// =============================================================
+// ABSTRACTS / _VARIABLES.SCSS
+// Tokens de diseño del proyecto (colores y medidas).
+// Este archivo NO genera CSS por sí mismo: solo define variables
+// que se importan con @use desde los componentes que las necesiten.
+// =============================================================
+
+// Colores
+$color-titulo: #d32f2f;        // Rojo del título (punto 4)
+$color-boton: #0066cc;         // Azul del botón (punto 5)
+$color-texto-boton: #ffffff;   // Texto blanco para que contraste con el azul
+$color-borde-imagen: #2e7d32;  // Verde del borde de la imagen (punto 6)
+
+// Medidas
+$grosor-borde-imagen: 3px;     // Grosor pedido en el enunciado (punto 6)
+$ancho-max-imagen: 300px;      // Evita que la imagen ocupe toda la pantalla
+$espaciado-md: 1rem;           // 16px
+$espaciado-lg: 2rem;           // 32px

@@ -1,0 +1,20 @@
+// =============================================================
+// ABSTRACTS / _MIXINS.SCSS
+// Bloques de estilos reutilizables.
+// Igual que las variables, no generan CSS hasta que se usan
+// con @include dentro de un componente.
+// =============================================================
+
+// Centra horizontalmente un elemento de bloque (imágenes, cajas).
+// Se usa para centrar la imagen de la home (punto 6).
+@mixin centrar-bloque {
+  display: block;
+  margin-inline: auto;
+}
+
+// Alinea el contenido de un contenedor a la derecha con flexbox.
+// Se usa en el contenedor del botón (punto 5).
+@mixin alinear-derecha {
+  display: flex;
+  justify-content: flex-end;
+}
